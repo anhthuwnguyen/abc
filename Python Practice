@@ -1,0 +1,12 @@
+A = [['Ty', 'Suu','Dan','Meo','Thin','Ty','Ngo', 'Mui', 'Than','Dau','Tuat','Hoi'],
+    [1 ,2   ,  3   , 4  ,  5   ,    6 , 7  ,  8  ,   9    ,  10 ,    11 ,    0]]      
+with open('./data_out.csv', 'r',encoding ='utf-8',errors='ignore') as fin:
+    lines= fin.readlines()
+    for line in lines[1:50]:
+        info=line.split('\t')
+        info[2]=int(info[2])
+        info[2]=2019-info[2]
+        for i in range(len(A[1])):
+                if (info[2]-3)%12 == A[1][i]:
+                        info[2]=A[0][i]
+        print(info[2])
